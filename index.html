@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWatch | Air Traffic Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">✈</span>
+            <div>
+                <h1>SKYWATCH</h1>
+                <p>AIR TRAFFIC INTELLIGENCE</p>
+            </div>
+        </div>
+        <div class="live-status">
+            <span class="live-dot"></span>
+            <span id="connectionStatus">CONNECTING</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="intro">
+            <div>
+                <p class="eyebrow">GLOBAL SURVEILLANCE SYSTEM</p>
+                <h2>Airspace Overview</h2>
+                <p class="subtitle">Monitor aircraft activity and flight states.</p>
+            </div>
+            <button id="refreshButton">↻ &nbsp; Refresh data</button>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <p>AIRCRAFT TRACKED</p>
+                <h3 id="aircraftCount">—</h3>
+                <span>In selected region</span>
+            </article>
+            <article class="stat-card">
+                <p>AVERAGE ALTITUDE</p>
+                <h3 id="averageAltitude">—</h3>
+                <span>Metres above sea level</span>
+            </article>
+            <article class="stat-card">
+                <p>AVERAGE SPEED</p>
+                <h3 id="averageSpeed">—</h3>
+                <span>Metres per second</span>
+            </article>
+            <article class="stat-card">
+                <p>LAST SUCCESSFUL UPDATE</p>
+                <h3 id="lastUpdated">—</h3>
+                <span id="dataStatus">Waiting for data</span>
+            </article>
+        </section>
+
+        <section class="workspace">
+            <article class="panel map-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Live Flight Map</h3>
+                        <p>Southern India · OpenSky Network</p>
+                    </div>
+                    <span class="tag">AIRSPACE</span>
+                </div>
+                <div id="map"></div>
+                <p id="message" class="message">Loading aircraft data...</p>
+            </article>
+
+            <article class="panel details-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Flight Details</h3>
+                        <p>Select an aircraft on the map or table.</p>
+                    </div>
+                </div>
+                <div id="flightDetails" class="flight-details">
+                    <div class="empty-icon">✈</div>
+                    <h4>No aircraft selected</h4>
+                    <p>Choose an aircraft to inspect its flight data.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel table-panel">
+            <div class="panel-heading table-heading">
+                <div>
+                    <h3>Aircraft Registry</h3>
+                    <p>Aircraft returned by the live data source</p>
+                </div>
+                <input id="searchInput" type="search"
+                    placeholder="Search callsign or ICAO..." />
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CALLSIGN</th>
+                            <th>ICAO24</th>
+                            <th>ALTITUDE</th>
+                            <th>SPEED</th>
+                            <th>ON GROUND</th>
+                        </tr>
+                    </thead>
+                    <tbody id="aircraftTable">
+                        <tr><td colspan="5">Waiting for aircraft data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            SKYWATCH <span>•</span> Flight-state data provided by OpenSky Network
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+
+:root {
+    --background: #f4f6fa;
+    --panel: #ffffff;
+    --border: #dce3ed;
+    --text: #1d2b45;
+    --muted: #687892;
+    --accent: #ef233c;
+    --red: #ef233c;
+    --yellow: #ffc928;
+    --navy: #1d2b45;
+    --soft-red: #fff0f1;
+    --soft-yellow: #fff8dc;
+    --shadow: 0 4px 18px rgba(29, 43, 69, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.topbar {
+    min-height: 78px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border-bottom: 3px solid var(--yellow);
+    box-shadow: 0 2px 10px rgba(29, 43, 69, 0.05);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    color: var(--red);
+    font-size: 32px;
+}
+
+.brand h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--navy);
+}
+
+.brand p,
+.eyebrow {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 5px 0 0;
+}
+
+.live-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--navy);
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16a36a;
+    box-shadow: 0 0 8px rgba(22, 163, 106, 0.25);
+}
+
+.dashboard {
+    max-width: 1500px;
+    margin: auto;
+    padding: 30px 5%;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 10px 0 6px;
+    color: var(--navy);
+}
+
+.subtitle,
+.panel-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+button {
+    background: var(--red);
+    color: #ffffff;
+    border: 1px solid var(--red);
+    border-radius: 7px;
+    padding: 12px 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #d71932;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.stat-card,
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.stat-card {
+    padding: 20px;
+    border-top: 3px solid var(--yellow);
+}
+
+.stat-card:nth-child(even) {
+    border-top-color: var(--red);
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.stat-card h3 {
+    font-size: 27px;
+    margin: 17px 0 8px;
+    color: var(--navy);
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.panel {
+    overflow: hidden;
+}
+
+.panel-heading {
+    padding: 19px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.panel-heading h3 {
+    font-size: 15px;
+    margin: 0;
+    color: var(--navy);
+}
+
+.panel-heading p {
+    margin: 7px 0 0;
+}
+
+.tag {
+    font-size: 10px;
+    color: #8a6500;
+    background: var(--soft-yellow);
+    border: 1px solid #f0d878;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+#map {
+    height: 370px;
+    background: #e7edf5;
+    border: 1px solid var(--border);
+}
+
+.message {
+    padding: 12px 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.flight-details {
+    padding: 24px 21px;
+    min-height: 310px;
+    background: #ffffff;
+}
+
+.empty-icon {
+    color: var(--red);
+    font-size: 40px;
+    margin-top: 25px;
+}
+
+.flight-details h4 {
+    margin-bottom: 8px;
+    color: var(--navy);
+}
+
+.flight-details p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.detail-item {
+    background: #f8faff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 13px;
+}
+
+.detail-item span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+
+.detail-item strong {
+    font-size: 14px;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+}
+
+.table-panel {
+    margin-bottom: 22px;
+}
+
+.table-heading input {
+    max-width: 270px;
+    width: 100%;
+    background: #ffffff;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 11px;
+    outline: none;
+}
+
+.table-heading input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.1);
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #ffffff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px 21px;
+    border-top: 1px solid #e8edf4;
+}
+
+th {
+    color: var(--muted);
+    background: #f8faff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background: var(--soft-yellow);
+}
+
+tbody td {
+    color: var(--text);
+}
+
+#aircraftTable tr[data-icao] {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#aircraftTable tr[data-icao]:hover {
+    background-color: #fff5d6;
+}
+
+#aircraftTable tr.selected-row {
+    background-color: #fff1b8;
+    outline: 1px solid #f0c83e;
+}
+
+footer {
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* Map movement trails remain visible in yellow */
+.leaflet-container {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+    .dashboard {
+        padding: 25px 3%;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 15px 4%;
+    }
+
+    .dashboard {
+        padding: 22px 4%;
+    }
+
+    .intro {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-card h3 {
+        font-size: 21px;
+    }
+
+    .table-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .table-heading input {
+        max-width: 100%;
+    }
+
+    #map {
+        height: 320px;
+    }
+}
+
+/* ===== VIBRANT SKYWATCH THEME ===== */
+
+:root {
+    --background: #fff8ee;
+    --panel: #ffffff;
+    --border: #e6d7c6;
+    --text: #202b42;
+    --muted: #68748a;
+    --accent: #ef233c;
+    --red: #ef233c;
+    --yellow: #ffca28;
+}
+
+/* Crisp, square corners */
+.stat-card,
+.panel,
+button,
+.tag,
+.detail-item,
+.table-heading input,
+#map {
+    border-radius: 0 !important;
+}
+
+/* Warm page background */
+body {
+    background:
+        linear-gradient(135deg, #fff8ee 0%, #fffdf8 48%, #fff0e8 100%);
+    color: var(--text);
+}
+
+/* Bold white header with red and yellow signature */
+.topbar {
+    background: #ffffff;
+    border-bottom: 5px solid var(--red);
+    box-shadow: 0 4px 0 var(--yellow);
+}
+
+/* Make the brand stand out */
+.brand-icon,
+.empty-icon {
+    color: var(--red);
+}
+
+.brand h1 {
+    color: #202b42;
+    font-weight: 800;
+}
+
+.brand h1 span {
+    color: var(--red);
+}
+
+/* Strong red buttons */
+button {
+    background: var(--red);
+    color: #ffffff;
+    border: 2px solid var(--red);
+    box-shadow: 4px 4px 0 #ffc928;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    background: #cf102b;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #ffc928;
+}
+
+/* Colorful statistic cards */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #e5d7c7;
+    border-top: 5px solid var(--yellow);
+    box-shadow: 4px 4px 0 #f1e4d4;
+    transition: transform 0.18s ease;
+}
+
+.stat-card:nth-child(even) {
+    border-top-color: var(--red);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card:nth-child(1) {
+    background: linear-gradient(145deg, #fff9df, #ffffff 75%);
+}
+
+.stat-card:nth-child(2) {
+    background: linear-gradient(145deg, #fff0f1, #ffffff 75%);
+}
+
+.stat-card:nth-child(3) {
+    background: linear-gradient(145deg, #fff5d5, #ffffff 75%);
+}
+
+.stat-card:nth-child(4) {
+    background: linear-gradient(145deg, #ffe8e9, #ffffff 75%);
+}
+
+.stat-card h3 {
+    color: #202b42;
+}
+
+/* More defined panel edges */
+.panel {
+    background: #ffffff;
+    border: 1px solid #dfcfbd;
+    box-shadow: 5px 5px 0 #f0e2d2;
+}
+
+.panel-heading {
+    background: #fff5dc;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.panel-heading h3 {
+    font-weight: 800;
+}
+
+/* Selected flight details */
+.detail-item {
+    background: #fff8e6;
+    border: 1px solid #edcf72;
+    border-left: 4px solid var(--yellow);
+}
+
+/* Search field */
+.table-heading input {
+    border: 2px solid #e3d5c5;
+    background: #fffdf9;
+}
+
+.table-heading input:focus {
+    border-color: var(--red);
+    box-shadow: 3px 3px 0 #ffca28;
+    outline: none;
+}
+
+/* Registry header */
+table {
+    background: #ffffff;
+}
+
+th {
+    background: #263650;
+    color: #ffffff;
+    border-top: 0;
+}
+
+td {
+    border-color: #eee5db;
+}
+
+tbody tr:nth-child(even) {
+    background: #fffaf2;
+}
+
+tbody tr:hover,
+#aircraftTable tr[data-icao]:hover {
+    background: #fff0bd;
+}
+
+#aircraftTable tr.selected-row {
+    background: #ffe6a0;
+    outline: 2px solid #f4b800;
+    outline-offset: -2px;
+}
+
+#aircraftTable tr.selected-row td:first-child {
+    border-left: 5px solid var(--red);
+}
+
+/* Connection indicator */
+.live-dot {
+    background: #12a66a;
+    box-shadow: 0 0 0 4px #d9f7e7;
+}
+
+/* Warm, colorful status tags */
+.tag {
+    background: #fff0bd;
+    color: #785400;
+    border: 1px solid #e9b700;
+    font-weight: 800;
+}
+
+/* Map frame */
+#map {
+    border: 2px solid #e2c99e;
+}
+
+/* Footer accent */
+footer span {
+    color: var(--red);
+}
+
+/* Better mobile spacing */
+@media (max-width: 600px) {
+    .panel,
+    .stat-card {
+        box-shadow: 3px 3px 0 #f0e2d2;
+    }
+}
+
+/* Aircraft data freshness badges */
+.status-fresh,
+.status-stale,
+.status-unknown {
+    display: inline-block;
+    padding: 5px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+    border-radius: 0 !important;
+}
+
+.status-fresh {
+    color: #166534;
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.status-stale {
+    color: #785400;
+    background: #fff0bd;
+    border-color: #e9b700;
+}
+
+.status-unknown {
+    color: #be123c;
+    background: #ffe4e6;
+    border-color: #fda4af;
+}
